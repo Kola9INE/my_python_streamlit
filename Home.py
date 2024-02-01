@@ -80,7 +80,7 @@ def reset_for(name:str):
 @st.cache_data
 def get_data():
     # Loading data from my drive.
-    path = "datasets/cleaned_food_prices.parquet"
+    path = "cleaned_food_prices.parquet"
     df = pd.read_parquet(path)
     
     # Transforming columns
