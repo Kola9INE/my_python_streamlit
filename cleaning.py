@@ -40,4 +40,4 @@ df['date']=df['date'].apply(pd.to_datetime, utc = False)
 df['state'].fillna(df['country'], inplace = True)
 
     # Saving cleaned dataset
-df.to_csv('datasets/cleaned_food_prices.csv')
+df.to_parquet('datasets/cleaned_food_prices.parquet')
