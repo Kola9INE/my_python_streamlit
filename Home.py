@@ -3,6 +3,7 @@ from urllib.error import URLError
 import pandas as pd, numpy as np
 from datetime import datetime
 import time as t
+import wget
 
 def tell_time():
     time = datetime.now().strftime("%H:%M:%S")
@@ -79,8 +80,8 @@ def reset_for(name:str):
 
 @st.cache_data
 def get_data():
-    # Loading data from my drive.
-    path = "cleaned_food_prices.parquet"
+    # Loading data from source.
+    path = wget.download("https://github.com/Kola9INE/my_python_streamlit/raw/main/cleaned_food_prices.parquet")
     df = pd.read_parquet(path)
     
     # Transforming columns
